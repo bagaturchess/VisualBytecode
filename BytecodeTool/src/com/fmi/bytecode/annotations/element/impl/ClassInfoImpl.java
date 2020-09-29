@@ -39,6 +39,31 @@ public class ClassInfoImpl extends ElementInfoImpl implements ClassInfo {
 	private boolean isInterface;
 	private boolean isEnum;
 	
+	
+	/*
+	 * This constructor is used in case of parsing error
+	 */
+	public ClassInfoImpl(String classFileName, ReadResult result) {
+		
+		super(null);
+
+		this.name = classFileName;
+		this.modifiers = 0;
+		this.superClassName = null;
+		this.packageName = null;
+		this.isParametrised = false;
+		this.globalResult = result;
+		this.isAnnotation = false;
+		this.isInterface = false;
+		this.isEnum = false;
+		
+		this.interfaceNames = new String[0];
+		this.methods = new MethodInfoImpl[0];
+		this.constructors = new ConstructorInfoImpl[0];
+		this.fields = new HashMap<String, FieldInfoImpl>();
+	}
+	
+	
 	public ClassInfoImpl(ClassModel classModel, ReadResult result) {	
 		
 		super(classModel.getAnnotations());

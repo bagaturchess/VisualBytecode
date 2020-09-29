@@ -18,12 +18,12 @@ import com.fmi.bytecode.annotations.util.ComparisonUtils;
  */
 public abstract class ElementInfoImpl implements ElementInfo {
 	
-	protected Map<String, AnnotationRecord> annotations = new HashMap<String, AnnotationRecord>();
+	protected Map<String, AnnotationRecord> annotations;
 	protected String name;
 	protected int modifiers;
 	
 	public ElementInfoImpl(Map<String, AnnotationModel> annotationsModel) {
-		annotations = convertAnnotationModel(annotationsModel);
+		annotations = annotationsModel == null ? new HashMap<String, AnnotationRecord>() : convertAnnotationModel(annotationsModel);
 	}
 
 	private Map<String, AnnotationRecord> convertAnnotationModel(Map<String, AnnotationModel> annotationModels) {

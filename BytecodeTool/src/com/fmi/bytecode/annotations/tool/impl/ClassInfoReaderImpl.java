@@ -20,6 +20,7 @@ import com.fmi.bytecode.annotations.file.impl.JavaClassFileImpl;
 import com.fmi.bytecode.annotations.file.impl.WARFileImpl;
 import com.fmi.bytecode.annotations.input.ByteCodeReader;
 import com.fmi.bytecode.annotations.input.ClassModel;
+import com.fmi.bytecode.annotations.input.adapters.asm30.ClassModelImpl;
 import com.fmi.bytecode.annotations.tool.ClassInfoReader;
 import com.fmi.bytecode.annotations.tool.ReadResult;
 import com.fmi.bytecode.annotations.tool.ReadingException;
@@ -196,13 +197,7 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 		ClassInfoImpl c = null;
 		try{
 			classStream = new FileInputStream(file);
-			
-	  	    logMessage("Start parsing of class ["+file.getAbsolutePath()+"]");
-	  	    
-			c = parseClassInformation(classStream, result);
-
-			logMessage("Parsing of class ["+file.getAbsolutePath()+"] finished successfully");
-			
+			c = parseClassInformation(file.getAbsolutePath(), classStream, result);
 		} catch (FileNotFoundException fe) {
 			throw new ReadingException(fe);
 		} finally {			
@@ -247,7 +242,8 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 		//traverses the jar/zip file and fills the result
 		ZipFile zip = null;
 		try {
-			zip = new ZipFile(file);				
+			zip = new ZipFile(file);
+			logMessage("Start parsing of archive [" + file.getAbsolutePath() + "] ...");
 			Enumeration<? extends ZipEntry> entries = zip.entries();				
 			if(entries!=null){
 				while(entries.hasMoreElements()){
@@ -260,13 +256,7 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 					InputStream entryStream = zip.getInputStream(e);
 					ClassInfoImpl c = null;
 					try {
-				  	    logMessage("Start parsing of class ["+e.getName()+"] in file ["+file.getAbsolutePath()+"]");
-				  	    
-						c = parseClassInformation(entryStream, result);
-				  	    
-						logMessage("Parsing of class ["+e.getName()+"] in file ["+file.getAbsolutePath()+"] finished successfully");
-				  	    
-
+						c = parseClassInformation(file.getAbsolutePath() + "#" + e.getName() , entryStream, result); 
 					} finally {
 						entryStream.close();
 					}
@@ -284,6 +274,7 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 					}*/
 				}
 			}
+			logMessage("Parsing of archive [" + file.getAbsolutePath() + "] finished successfuly.");
 		} catch (IOException e) {			
 			throw new ReadingException(e);
 		} finally {
@@ -305,9 +296,18 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 		return entry.getName().endsWith(CLASS_FILE_EXTENSION);
 	}
 
-	private static ClassInfoImpl parseClassInformation(InputStream bytecode, ReadResult result) throws ReadingException {
-		ClassModel cm = bcReader.parseClassInformation(bytecode);
-		return new ClassInfoImpl(cm, result);
+	private static ClassInfoImpl parseClassInformation(String classFileName, InputStream bytecode, ReadResult result) throws ReadingException {
+		ClassInfoImpl ci = null;
+		try {
+			//logMessage("Start parsing of class [" + classFileName + "]");
+			ClassModel cm = bcReader.parseClassInformation(bytecode);
+			//logMessage("Parsing of class ["+classFileName+"] finished successfully");
+			ci = new ClassInfoImpl(cm, result);
+		} catch(Exception e) {
+			logMessage("Parsing of class ["+classFileName+"] finished with ERROR");
+			ci = new ClassInfoImpl(classFileName + " (ERROR while parsing)", result);
+		}
+		return ci;
 	}
 
 	
