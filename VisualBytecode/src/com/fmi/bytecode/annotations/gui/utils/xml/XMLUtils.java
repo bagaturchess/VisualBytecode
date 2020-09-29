@@ -42,12 +42,8 @@ import org.w3c.dom.Text;
 
 import org.xml.sax.SAXException;
 
-import org.apache.commons.lang.StringEscapeUtils;
-
 import com.fmi.bytecode.annotations.gui.utils.ExportUtils;
 import com.fmi.bytecode.annotations.gui.utils.ResourceUtils;
-
-import java.io.FileNotFoundException;
 
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
@@ -215,7 +211,7 @@ public class XMLUtils {
     }
     
     private static String formatValue(String v) {
-       return StringEscapeUtils.escapeXml(StringEscapeUtils.unescapeXml(v));
+       return v;//return StringEscapeUtils.escapeXml(StringEscapeUtils.unescapeXml(v));
     }
     
    

@@ -7,7 +7,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/BytecodeTool"/>
-	<classpathentry kind="lib" path="/BytecodeTool/lib/bytecode-indexing.jar"/>
-	<classpathentry kind="lib" path="lib/commons-lang-2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

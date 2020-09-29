@@ -5,7 +5,7 @@ import com.fmi.bytecode.annotations.tool.impl.ClassInfoReaderImpl;
 
 public final class ByteCodeReaderFactory {
 	
-	private static final String DEFAULT_BYTECODE_READER_CLASSNAME = "com.fmi.bytecode.annotations.input.adapters.sap.ByteCodeReaderImpl";
+	private static final String DEFAULT_BYTECODE_READER_CLASSNAME = "com.fmi.bytecode.annotations.input.adapter.ByteCodeReaderImpl";
 	
 	public static final ByteCodeReader createByteCodeReader() throws Exception {
 		return createByteCodeReader(DEFAULT_BYTECODE_READER_CLASSNAME);

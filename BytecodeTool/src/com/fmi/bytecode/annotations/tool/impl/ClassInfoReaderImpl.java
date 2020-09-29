@@ -10,8 +10,6 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-import com.fmi.bytecode.annotations.element.ClassInfo;
 import com.fmi.bytecode.annotations.element.impl.ClassInfoImpl;
 import com.fmi.bytecode.annotations.file.FileInfo;
 import com.fmi.bytecode.annotations.file.impl.FolderInfoImpl;
@@ -20,7 +18,6 @@ import com.fmi.bytecode.annotations.file.impl.JavaClassFileImpl;
 import com.fmi.bytecode.annotations.file.impl.WARFileImpl;
 import com.fmi.bytecode.annotations.input.ByteCodeReader;
 import com.fmi.bytecode.annotations.input.ClassModel;
-import com.fmi.bytecode.annotations.input.adapters.asm30.ClassModelImpl;
 import com.fmi.bytecode.annotations.tool.ClassInfoReader;
 import com.fmi.bytecode.annotations.tool.ReadResult;
 import com.fmi.bytecode.annotations.tool.ReadingException;
