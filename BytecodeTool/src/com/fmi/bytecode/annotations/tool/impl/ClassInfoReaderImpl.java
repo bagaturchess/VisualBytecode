@@ -256,7 +256,7 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 					InputStream entryStream = zip.getInputStream(e);
 					ClassInfoImpl c = null;
 					try {
-						c = parseClassInformation(file.getAbsolutePath() + "#" + e.getName() , entryStream, result); 
+						c = parseClassInformation(e.getName() , entryStream, result); 
 					} finally {
 						entryStream.close();
 					}
@@ -305,7 +305,7 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 			ci = new ClassInfoImpl(cm, result);
 		} catch(Exception e) {
 			logMessage("Parsing of class ["+classFileName+"] finished with ERROR");
-			ci = new ClassInfoImpl(classFileName + " (ERROR while parsing)", result);
+			ci = new ClassInfoImpl("ERRORS." + classFileName + " (ERROR while parsing)", result);
 		}
 		return ci;
 	}
