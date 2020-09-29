@@ -1,8 +1,1 @@
 *.class
-Sources/UCIRemote*
-Sources/WorkDir*
-*.cg
-*features.bin
-
-
-
