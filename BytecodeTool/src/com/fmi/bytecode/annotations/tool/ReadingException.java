@@ -6,7 +6,7 @@ package com.fmi.bytecode.annotations.tool;
  * 
  * @author Krasimir Topchiyski
  */
-public class ReadingException extends Exception{
+public class ReadingException extends Exception {
     
     /** Serialization class version tag. */
     private static final long serialVersionUID = 5016083824960724957L;
