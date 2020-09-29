@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="projects">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="project" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="project">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="content" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="content">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="package" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="package">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="class" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="class">
+    <xs:complexType>
+	<xs:sequence>
+            <xs:element ref="annotations" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="constructors" minOccurs="0" maxOccurs="1"/>
+	    <xs:element ref="methods" minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="fields" minOccurs="0" maxOccurs="1"/>	     
+	</xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="annotations">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="annotation" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="methods">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="method" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="constructors">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="constructor" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="fields">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="field" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="annotation">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="annotation-attribute" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="method">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="annotations"  minOccurs="0" maxOccurs="1"/>
+	    <xs:element ref="parameters"  minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="type" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="constructor">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="annotations" minOccurs="0" maxOccurs="1"/>
+	    <xs:element ref="parameters" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="field">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="annotations"  minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+	<xs:attribute name="name" type="xs:string" use="required"/>
+	<xs:attribute name="type" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="parameters">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="parameter" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="parameter">
+    <xs:complexType>
+        <xs:sequence>
+	    <xs:element ref="annotations" minOccurs="0" maxOccurs="1"/>
+	</xs:sequence>
+	<xs:attribute name="type" type="xs:string" use="required"/>
+        <xs:attribute name="order" type="xs:string" use="required"/>
+    </xs:complexType> 
+</xs:element>
+
+<xs:element name="annotation-attribute">
+    <xs:complexType>
+		<xs:choice>
+            <xs:element ref="array-attribute"  minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="annotation"  minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="value" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+
+<xs:element name="array-attribute">
+    <xs:complexType>
+        <xs:choice>
+            <xs:element ref="annotation"  minOccurs="0" maxOccurs="1"/>
+            <xs:element ref="array-attribute" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="order" type="xs:string" use="required"/>
+        <xs:attribute name="value" type="xs:string" use="required"/>
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>
