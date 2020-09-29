@@ -50,7 +50,7 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 	 * @return result information tree
 	 * @throws ReadingException if there is any parsing problem
 	 */
-	public ReadResult read(InputStream[] classesStreams) throws ReadingException {
+	/*public ReadResult read(InputStream[] classesStreams) throws ReadingException {
 		
 		ReadResultImpl result = new ReadResultImpl();
 	
@@ -59,7 +59,7 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 		}
 		
 		return result;
-	}
+	}*/
 
 	/**
 	 * Extracts information out of an array of class, JAR, WAR files and folders
@@ -103,7 +103,7 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 	}	
 	
 	//This method is used outside in the ReadResult for the external classes provided through ClassFinder interface
-	public static ClassInfo traverseClassStream(InputStream is, ReadResultImpl result) throws ReadingException {
+	/*public static ClassInfo traverseClassStream(InputStream is, ReadResultImpl result) throws ReadingException {
 				
   	    logMessage("Start parsing of class stream");
 
@@ -115,13 +115,13 @@ public class ClassInfoReaderImpl implements ClassInfoReader {
 		result.addClass(c);
 		
 		//add the class level annotations to the result indexes
-		/*for(AnnotationRecord ann: c.getAnnotations().values()){
-			result.addClassLevelAnnotation(ann);
-		}*/
+		//for(AnnotationRecord ann: c.getAnnotations().values()){
+		//	result.addClassLevelAnnotation(ann);
+		//}
 		
 		return c;
 
-	}
+	}*/
 
 	private void readInternal(ReadResultImpl rr, File[] files, String relPath, FileInfo parent) throws ReadingException {
 		for(File f: files){
