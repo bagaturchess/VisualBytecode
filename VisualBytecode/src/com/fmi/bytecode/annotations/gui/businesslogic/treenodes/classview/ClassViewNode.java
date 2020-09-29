@@ -6,6 +6,7 @@ import com.fmi.bytecode.annotations.element.ClassInfo;
 import com.fmi.bytecode.annotations.element.ConstructorInfo;
 import com.fmi.bytecode.annotations.element.FieldInfo;
 import com.fmi.bytecode.annotations.element.MethodInfo;
+import com.fmi.bytecode.annotations.file.FileInfo;
 
 import java.util.List;
 
@@ -20,10 +21,28 @@ public class ClassViewNode extends AnnotatedViewNode {
     //classInfo.getName() -> name of class with package          
     public ClassViewNode(TreeNodeBaseImpl parent, ClassInfo classInfo, 
                          List<AnnotationRecord> colouredAnnotations) {
-        super(parent, classInfo);
+        super(parent, getClassName2Display(classInfo), classInfo);
         initSubTree();
         this.colouredAnnotations = colouredAnnotations;
     }
+
+	private static String getClassName2Display(ClassInfo classInfo) {
+		FileInfo[] containingFiles = classInfo.getContainingFiles();
+		if (containingFiles == null || containingFiles.length == 0) {
+			return classInfo.getName();
+		}
+		
+		String filesNames = "";
+		for (int i=0; i<containingFiles.length; i++) {
+			FileInfo fi = containingFiles[i];
+			filesNames += fi.getFullPath();
+			if (i != containingFiles.length - 1) {
+				filesNames += ", ";
+			}
+		}
+		
+		return classInfo.getName() + " (" + filesNames + ")";
+	}
 
     public ClassInfo getClassInfo() {
         return (ClassInfo) getElementInfo();
