@@ -27,7 +27,6 @@ import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
 import javax.swing.JTree;
-
 import javax.swing.SwingConstants;
 import javax.swing.tree.TreeModel;
 
@@ -39,8 +38,6 @@ import com.fmi.bytecode.annotations.element.ClassInfo;
 import java.awt.Color;
 
 import java.awt.Font;
-
-
 import java.util.List;
 
 import javax.swing.tree.TreePath;
@@ -49,9 +46,6 @@ import com.fmi.bytecode.annotations.gui.businesslogic.model.projects.ProjectMode
 
 
 import com.fmi.bytecode.annotations.gui.graphical.dialogs.ClosableTabbedPaneWithPopup;
-
-
-import oracle.jdeveloper.layout.VerticalFlowLayout;
 
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.TreeUtils;
 
@@ -134,10 +128,6 @@ public class MainFrame extends JFrame implements FullScreenable {
     private MainFrameActionListener mainFrameActionListener;
     private JLabel labelSearchView = new JLabel();
     private JLabel labelClassView = new JLabel();
-
-    //private PaneLayout paneLayout1 = new PaneLayout();
-    private VerticalFlowLayout verticalFlowLayout1 = new VerticalFlowLayout();
-    
     
     private JButton labelProjects = new JButton();
     
@@ -280,8 +270,13 @@ public class MainFrame extends JFrame implements FullScreenable {
         searchAnnotResultSplitPane.setDividerSize(4);
         searchAnnotResultSplitPane.setDividerLocation(400);
 
-        panelProjects.setLayout(verticalFlowLayout1);
-                
+        BorderLayout prjLayout = new BorderLayout();
+        panelProjects.setLayout(prjLayout);
+        
+        panelProjects.add(toolBarProject, BorderLayout.PAGE_START);
+        panelProjects.add(projectTreeRootPane, BorderLayout.CENTER);
+        panelProjects.add(labelProjects, BorderLayout.PAGE_END);
+        
         labelSearchView.setText("Annotations search results will be displayed here");
         labelSearchView.setHorizontalAlignment(SwingConstants.CENTER);
         labelSearchView.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -341,14 +336,9 @@ public class MainFrame extends JFrame implements FullScreenable {
         labelProjects.setFocusable(false);        
         labelProjects.setBorderPainted(false);
         
-        verticalFlowLayout1.setVerticalFill(true);
         toolBarProject.setFloatable(false);
         
         projectTreeRootPane.getContentPane().add(projectTreeScrollPane);
-        
-        panelProjects.add(toolBarProject);
-        panelProjects.add(projectTreeRootPane);
-        panelProjects.add(labelProjects);
         
         //tabbedPaneProjects.addTab("Projects View", GUIComponentsRepository.PROJECT_TAB, projectTreeRootPane);
         tabbedPaneProjects.addTab("Projects View", GUIComponentsRepository.PROJECT_TAB, panelProjects);
