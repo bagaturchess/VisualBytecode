@@ -1,8 +1,5 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.treenodes.searchresult;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-import com.fmi.bytecode.annotations.tool.indexing.AnnotationsIndex;
-
 import java.io.File;
 
 import java.util.ArrayList;
@@ -18,6 +15,8 @@ import com.fmi.bytecode.annotations.gui.businesslogic.model.export.SaveUnit;
 
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.MutableNode;
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.TreeNodeBaseImpl;
+import com.fmi.bytecode.annotations.tool.element.AnnotationRecord;
+import com.fmi.bytecode.annotations.tool.tool.indexing.AnnotationsIndex;
 
 
 public class LevelNode extends MutableNode implements SavableNode {

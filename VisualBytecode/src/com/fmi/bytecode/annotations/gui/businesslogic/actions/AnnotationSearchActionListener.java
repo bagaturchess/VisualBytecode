@@ -3,10 +3,9 @@ package com.fmi.bytecode.annotations.gui.businesslogic.actions;
 import com.fmi.bytecode.annotations.gui.graphical.GUIComponentsRepository;
 
 import com.fmi.bytecode.annotations.gui.graphical.dialogs.AnnotationsSearchDialog;
-
-import com.fmi.bytecode.annotations.tool.ReadResult;
-import com.fmi.bytecode.annotations.tool.indexing.AnnotationFilter;
-import com.fmi.bytecode.annotations.tool.indexing.AnnotationsIndex;
+import com.fmi.bytecode.annotations.tool.tool.ReadResult;
+import com.fmi.bytecode.annotations.tool.tool.indexing.AnnotationFilter;
+import com.fmi.bytecode.annotations.tool.tool.indexing.AnnotationsIndex;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

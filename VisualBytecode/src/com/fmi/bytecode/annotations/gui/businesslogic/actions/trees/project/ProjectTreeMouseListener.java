@@ -3,8 +3,7 @@ package com.fmi.bytecode.annotations.gui.businesslogic.actions.trees.project;
 import com.fmi.bytecode.annotations.gui.graphical.GUIComponentsRepository;
 
 import com.fmi.bytecode.annotations.gui.graphical.dialogs.RightClickGlassPane;
-
-import com.fmi.bytecode.annotations.element.ClassInfo;
+import com.fmi.bytecode.annotations.tool.element.ClassInfo;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

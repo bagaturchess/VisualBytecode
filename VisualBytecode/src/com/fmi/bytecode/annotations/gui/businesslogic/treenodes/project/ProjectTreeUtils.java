@@ -1,10 +1,6 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.treenodes.project;
 
 
-import com.fmi.bytecode.annotations.tool.indexing.AnnotationClassNode;
-import com.fmi.bytecode.annotations.tool.indexing.AnnotationPackageNode;
-import com.fmi.bytecode.annotations.tool.indexing.AnnotationsIndex;
-
 import java.io.File;
 
 import java.util.List;
@@ -12,6 +8,9 @@ import java.util.List;
 import com.fmi.bytecode.annotations.gui.businesslogic.model.projects.ProjectModel;
 
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.TreeNodeBaseImpl;
+import com.fmi.bytecode.annotations.tool.tool.indexing.AnnotationClassNode;
+import com.fmi.bytecode.annotations.tool.tool.indexing.AnnotationPackageNode;
+import com.fmi.bytecode.annotations.tool.tool.indexing.AnnotationsIndex;
 
 
 public class ProjectTreeUtils {

@@ -1,8 +1,5 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.treenodes.searchresult;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-import com.fmi.bytecode.annotations.element.ClassInfo;
-
 import java.io.File;
 
 import java.util.ArrayList;
@@ -16,6 +13,8 @@ import com.fmi.bytecode.annotations.gui.businesslogic.model.export.SaveUnit;
 
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.LeafNode;
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.TreeNodeBaseImpl;
+import com.fmi.bytecode.annotations.tool.element.AnnotationRecord;
+import com.fmi.bytecode.annotations.tool.element.ClassInfo;
 
 public class PackageAndClassNode extends LeafNode implements SavableNode {
     

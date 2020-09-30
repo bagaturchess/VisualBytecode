@@ -1,7 +1,5 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.treenodes.project;
 
-import com.fmi.bytecode.annotations.element.ClassInfo;
-
 import java.io.File;
 
 import java.util.ArrayList;
@@ -15,6 +13,7 @@ import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.TreeUtils;
 
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.ElementNode;
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.TreeNodeBaseImpl;
+import com.fmi.bytecode.annotations.tool.element.ClassInfo;
 
 public class PackageNode extends ElementNode  implements SavableNode {
   

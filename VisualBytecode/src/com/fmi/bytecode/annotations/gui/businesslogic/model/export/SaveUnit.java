@@ -1,7 +1,5 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.model.export;
 
-import com.fmi.bytecode.annotations.element.ClassInfo;
-
 import java.io.File;
 
 import java.util.HashSet;
@@ -10,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.fmi.bytecode.annotations.gui.businesslogic.model.projects.ProjectModel;
+import com.fmi.bytecode.annotations.tool.element.ClassInfo;
 
 public class SaveUnit {
 

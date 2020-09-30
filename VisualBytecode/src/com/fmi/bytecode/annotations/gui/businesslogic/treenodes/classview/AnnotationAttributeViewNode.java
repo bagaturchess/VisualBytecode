@@ -1,10 +1,9 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.treenodes.classview;
 
-import com.fmi.bytecode.annotations.element.NamedMember;
-import com.fmi.bytecode.annotations.element.impl.AnnotationNamedMember;
-
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.LeafNode;
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.TreeNodeBaseImpl;
+import com.fmi.bytecode.annotations.tool.element.NamedMember;
+import com.fmi.bytecode.annotations.tool.element.impl.AnnotationNamedMember;
 
 public class AnnotationAttributeViewNode extends LeafNode {
     

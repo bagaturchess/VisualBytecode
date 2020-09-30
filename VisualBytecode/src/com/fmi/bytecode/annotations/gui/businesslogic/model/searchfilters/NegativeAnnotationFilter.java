@@ -1,19 +1,17 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.model.searchfilters;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-import com.fmi.bytecode.annotations.element.ClassInfo;
-import com.fmi.bytecode.annotations.element.ClassMemberInfo;
-import com.fmi.bytecode.annotations.element.ConstructorInfo;
-import com.fmi.bytecode.annotations.element.ElementInfo;
-
-import com.fmi.bytecode.annotations.element.FieldInfo;
-
-import com.fmi.bytecode.annotations.element.MethodInfo;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.fmi.bytecode.annotations.tool.element.AnnotationRecord;
+import com.fmi.bytecode.annotations.tool.element.ClassInfo;
+import com.fmi.bytecode.annotations.tool.element.ClassMemberInfo;
+import com.fmi.bytecode.annotations.tool.element.ConstructorInfo;
+import com.fmi.bytecode.annotations.tool.element.ElementInfo;
+import com.fmi.bytecode.annotations.tool.element.FieldInfo;
+import com.fmi.bytecode.annotations.tool.element.MethodInfo;
 
 public class NegativeAnnotationFilter extends AnnotationFilterImpl {
 

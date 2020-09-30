@@ -1,13 +1,12 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.treenodes.classview;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-import com.fmi.bytecode.annotations.element.ElementInfo;
-
 import java.util.Map;
 
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.MutableNode;
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.StaticTextNode;
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.TreeNodeBaseImpl;
+import com.fmi.bytecode.annotations.tool.element.AnnotationRecord;
+import com.fmi.bytecode.annotations.tool.element.ElementInfo;
 
 public abstract class AnnotatedViewNode extends MutableNode {
     

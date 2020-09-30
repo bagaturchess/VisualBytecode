@@ -1,7 +1,5 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.treenodes.classview;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-
 import java.awt.Color;
 import java.awt.Component;
 
@@ -13,6 +11,7 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.TreeUtils;
 
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.TreeNodeBaseImpl;
+import com.fmi.bytecode.annotations.tool.element.AnnotationRecord;
 
 public class ColourTreeCellRenderer extends DefaultTreeCellRenderer {
     

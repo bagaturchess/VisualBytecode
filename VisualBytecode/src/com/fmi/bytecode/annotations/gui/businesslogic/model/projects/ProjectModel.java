@@ -1,11 +1,6 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.model.projects;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-import com.fmi.bytecode.annotations.element.ClassInfo;
 import com.fmi.bytecode.annotations.gui.businesslogic.model.ModelException;
-import com.fmi.bytecode.annotations.tool.ReadResult;
-
-import com.fmi.bytecode.annotations.tool.indexing.AnnotationsIndex;
 
 import java.io.File;
 
@@ -23,6 +18,10 @@ import java.util.Vector;
 
 
 import com.fmi.bytecode.annotations.gui.utils.ModelUtils;
+import com.fmi.bytecode.annotations.tool.element.AnnotationRecord;
+import com.fmi.bytecode.annotations.tool.element.ClassInfo;
+import com.fmi.bytecode.annotations.tool.tool.ReadResult;
+import com.fmi.bytecode.annotations.tool.tool.indexing.AnnotationsIndex;
 
 public class ProjectModel {
     public static final String FILE_EXTENSION = ".amp"; //amp = annotation model project

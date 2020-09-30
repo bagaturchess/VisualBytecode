@@ -1,10 +1,6 @@
 package com.fmi.bytecode.annotations.gui.utils;
 
 
-import com.fmi.bytecode.annotations.tool.AnnotationsReaderFactory;
-import com.fmi.bytecode.annotations.tool.ClassInfoReader;
-import com.fmi.bytecode.annotations.tool.ReadResult;
-
 import java.io.File;
 
 import java.io.IOException;
@@ -23,6 +19,9 @@ import org.w3c.dom.Element;
 
 import com.fmi.bytecode.annotations.gui.utils.xml.XMLException;
 import com.fmi.bytecode.annotations.gui.utils.xml.XMLUtils;
+import com.fmi.bytecode.annotations.tool.tool.AnnotationsReaderFactory;
+import com.fmi.bytecode.annotations.tool.tool.ClassInfoReader;
+import com.fmi.bytecode.annotations.tool.tool.ReadResult;
 
 
 public class ModelUtils {

@@ -1,10 +1,10 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.model.searchfilters;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-import com.fmi.bytecode.annotations.element.MethodInfo;
-import com.fmi.bytecode.annotations.tool.indexing.AnnotationFilter;
-
 import java.util.Map;
+
+import com.fmi.bytecode.annotations.tool.element.AnnotationRecord;
+import com.fmi.bytecode.annotations.tool.element.MethodInfo;
+import com.fmi.bytecode.annotations.tool.tool.indexing.AnnotationFilter;
 
 public abstract class AnnotationFilterImpl implements AnnotationFilter {
     private AnnotationFilterModel filter;

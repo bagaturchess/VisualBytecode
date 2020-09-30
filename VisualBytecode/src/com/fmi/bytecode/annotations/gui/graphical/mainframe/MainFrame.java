@@ -32,9 +32,6 @@ import javax.swing.tree.TreeModel;
 
 import com.fmi.bytecode.annotations.gui.businesslogic.model.projects.ModelsRepository;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-import com.fmi.bytecode.annotations.element.ClassInfo;
-
 import java.awt.Color;
 
 import java.awt.Font;
@@ -57,6 +54,8 @@ import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.TreeNodeB
 
 
 import com.fmi.bytecode.annotations.gui.utils.FullScreenable;
+import com.fmi.bytecode.annotations.tool.element.AnnotationRecord;
+import com.fmi.bytecode.annotations.tool.element.ClassInfo;
 
 public class MainFrame extends JFrame implements FullScreenable {
     private static int searchViewSeqNumber = 1; //search view tab number

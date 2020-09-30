@@ -1,11 +1,5 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.treenodes.searchresult;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-
-import com.fmi.bytecode.annotations.element.ClassInfo;
-import com.fmi.bytecode.annotations.element.ClassMemberInfo;
-import com.fmi.bytecode.annotations.element.ElementInfo;
-
 import java.io.File;
 
 import java.util.ArrayList;
@@ -27,6 +21,10 @@ import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.TreeUtils;
 
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.ElementNode;
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.TreeNodeBaseImpl;
+import com.fmi.bytecode.annotations.tool.element.AnnotationRecord;
+import com.fmi.bytecode.annotations.tool.element.ClassInfo;
+import com.fmi.bytecode.annotations.tool.element.ClassMemberInfo;
+import com.fmi.bytecode.annotations.tool.element.ElementInfo;
 
 public class ProjectAndContentNode extends ElementNode implements SavableNode {
     private File content;

@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry combineaccessrules="false" kind="src" path="/BytecodeTool"/>
+	<classpathentry kind="lib" path="lib/bytecode-parser.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

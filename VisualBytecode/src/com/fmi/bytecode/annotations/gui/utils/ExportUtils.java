@@ -1,15 +1,5 @@
 package com.fmi.bytecode.annotations.gui.utils;
 
-import com.fmi.bytecode.annotations.element.AnnotationRecord;
-import com.fmi.bytecode.annotations.element.ClassInfo;
-
-import com.fmi.bytecode.annotations.element.ConstructorInfo;
-
-import com.fmi.bytecode.annotations.element.FieldInfo;
-import com.fmi.bytecode.annotations.element.MethodInfo;
-
-import com.fmi.bytecode.annotations.element.NamedMember;
-
 import sun.awt.shell.ShellFolder;
 
 import java.io.File;
@@ -41,6 +31,12 @@ import com.fmi.bytecode.annotations.gui.businesslogic.model.export.SaveUnit;
 
 import com.fmi.bytecode.annotations.gui.utils.xml.XMLException;
 import com.fmi.bytecode.annotations.gui.utils.xml.XMLUtils;
+import com.fmi.bytecode.annotations.tool.element.AnnotationRecord;
+import com.fmi.bytecode.annotations.tool.element.ClassInfo;
+import com.fmi.bytecode.annotations.tool.element.ConstructorInfo;
+import com.fmi.bytecode.annotations.tool.element.FieldInfo;
+import com.fmi.bytecode.annotations.tool.element.MethodInfo;
+import com.fmi.bytecode.annotations.tool.element.NamedMember;
 
 
 public class ExportUtils {

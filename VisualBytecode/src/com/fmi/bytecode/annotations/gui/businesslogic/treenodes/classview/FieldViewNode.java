@@ -1,9 +1,8 @@
 package com.fmi.bytecode.annotations.gui.businesslogic.treenodes.classview;
 
-import com.fmi.bytecode.annotations.element.FieldInfo;
-
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.MutableNode;
 import com.fmi.bytecode.annotations.gui.businesslogic.treenodes.common.TreeNodeBaseImpl;
+import com.fmi.bytecode.annotations.tool.element.FieldInfo;
 
 public class FieldViewNode extends AnnotatedViewNode {
         
