@@ -1,17 +1,11 @@
-// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
-// Jad home page: http://www.kpdus.com/jad.html
-// Decompiler options: packimports(3) 
-// Source File Name:   StringUtils.java
-
 package com.fmi.bytecode.parser.internal;
+
 
 import java.io.*;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Properties;
 
-// Referenced classes of package com.sap.engine.library.bytecode.misc:
-//            Debug, ResourceManager
 
 public final class StringUtils
 {

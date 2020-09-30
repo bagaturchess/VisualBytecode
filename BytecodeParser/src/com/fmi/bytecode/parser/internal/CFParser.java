@@ -242,45 +242,36 @@ public final class CFParser implements Constants
                 }
                 return (AttributeInfo)innerClassesAttribute;
             }
-            if (s.equals("COM.SAP.Modified")) {
-                if (attributeLength == 2) {
-                    return (AttributeInfo)new SAPModifiedAttribute(in.readUnsignedShort());
-                }
-                for (int l = 0; l < attributeLength; ++l) {
-                    in.readByte();
-                }
-                return (AttributeInfo)new SAPModifiedAttribute(0);
+            
+            if (s.equals("RuntimeVisibleAnnotations") || s.equals("RuntimeInvisibleAnnotations")) {
+                return this.parseAnnotationAttribute(in, cf, name, attributeLength, options, attributed);
             }
-            else {
-                if (s.equals("RuntimeVisibleAnnotations") || s.equals("RuntimeInvisibleAnnotations")) {
-                    return this.parseAnnotationAttribute(in, cf, name, attributeLength, options, attributed);
-                }
-                if (s.equals("RuntimeVisibleParameterAnnotations") || s.equals("RuntimeInvisibleParameterAnnotations")) {
-                    return this.parseAnnotationParameterAttribute(in, cf, name, attributeLength, options, attributed);
-                }
-                if (s.equals("AnnotationDefault")) {
-                    return (AttributeInfo)new AnnotationDefaultAttribute(this.parseAnnotationPairValue(in, cf));
-                }
-                if (s.equals("Signature")) {
-                    return (AttributeInfo)new SignatureAttribute(cf.getCPInfo(in.readUnsignedShort()));
-                }
-                if (s.equals("EnclosingMethod")) {
-                    final CPInfo enclosingClass = cf.getCPInfo(in.readUnsignedShort());
-                    CPInfo enclosingMethod = null;
-                    final int methodIdx = in.readUnsignedShort();
-                    if (methodIdx != 0) {
-                        enclosingMethod = cf.getCPInfo(methodIdx);
-                    }
-                    return (AttributeInfo)new EnclosingMethodAttribute(enclosingClass, enclosingMethod);
-                }
-                if (s.equals("SourceDebugExtension")) {
-                    final byte[] debugExtensionBytes = new byte[attributeLength];
-                    in.readFully(debugExtensionBytes);
-                    final String debugExtension = new String(debugExtensionBytes, "UTF-8");
-                    return (AttributeInfo)new SourceDebugExtensionAttribute((Attributed)cf, debugExtension);
-                }
-                return this.parseUnknownAttribute(in, name, attributeLength);
+            if (s.equals("RuntimeVisibleParameterAnnotations") || s.equals("RuntimeInvisibleParameterAnnotations")) {
+                return this.parseAnnotationParameterAttribute(in, cf, name, attributeLength, options, attributed);
             }
+            if (s.equals("AnnotationDefault")) {
+                return (AttributeInfo)new AnnotationDefaultAttribute(this.parseAnnotationPairValue(in, cf));
+            }
+            if (s.equals("Signature")) {
+                return (AttributeInfo)new SignatureAttribute(cf.getCPInfo(in.readUnsignedShort()));
+            }
+            if (s.equals("EnclosingMethod")) {
+                final CPInfo enclosingClass = cf.getCPInfo(in.readUnsignedShort());
+                CPInfo enclosingMethod = null;
+                final int methodIdx = in.readUnsignedShort();
+                if (methodIdx != 0) {
+                    enclosingMethod = cf.getCPInfo(methodIdx);
+                }
+                return (AttributeInfo)new EnclosingMethodAttribute(enclosingClass, enclosingMethod);
+            }
+            if (s.equals("SourceDebugExtension")) {
+                final byte[] debugExtensionBytes = new byte[attributeLength];
+                in.readFully(debugExtensionBytes);
+                final String debugExtension = new String(debugExtensionBytes, "UTF-8");
+                return (AttributeInfo)new SourceDebugExtensionAttribute((Attributed)cf, debugExtension);
+            }
+            return this.parseUnknownAttribute(in, name, attributeLength);
+            
         }
     }
     

@@ -247,10 +247,6 @@ public final class CFSerializer implements Constants
                 out.writeShort(entry.getInnerAccessFlags());
             }
         }
-        else if (a instanceof SAPModifiedAttribute) {
-            out.writeInt(2);
-            out.writeShort(((SAPModifiedAttribute)a).getVersion());
-        }
         else if (a instanceof SignatureAttribute) {
             out.writeInt(2);
             out.writeShort(((SignatureAttribute)a).getSignatureIndex().getIndex());
