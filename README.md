@@ -20,6 +20,11 @@ The rest of the project is open source and you are welcome to contribute.
 The very initial versions of this project were handed over as a diploma work in the university.
 That is why I have decided to use MIT License for the project.
 
+# Running the program
+The project structure is an eclipse based project, which can be directly imported into the Eclipse IDE. The main class is com.fmi.bytecode.annotations.gui.graphical.mainframe.AnnotationToolGUI.
+
+You can download also the standalone version from releases section, which needs only Java installed to run.
+
 # Author
 
 The author of the project is <a href="https://www.linkedin.com/in/topchiyski/">Krasimir Topchiyski</a>.
