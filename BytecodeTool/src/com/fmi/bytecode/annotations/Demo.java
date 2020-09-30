@@ -1,14 +1,14 @@
 package com.fmi.bytecode.annotations;
 
+
 import java.io.File;
 import java.util.Map;
 
 import com.fmi.bytecode.annotations.element.ClassInfo;
-import com.fmi.bytecode.annotations.input.ByteCodeReader;
-import com.fmi.bytecode.annotations.input.ByteCodeReaderFactory;
 import com.fmi.bytecode.annotations.tool.AnnotationsReaderFactory;
 import com.fmi.bytecode.annotations.tool.ClassInfoReader;
 import com.fmi.bytecode.annotations.tool.ReadResult;
+
 
 public class Demo {
 	public static void main(String[] args) {
@@ -22,8 +22,7 @@ public class Demo {
 			System.exit(-1);
 		}
 		try {
-			ByteCodeReader bcReader = ByteCodeReaderFactory.createByteCodeReader();
-			ClassInfoReader cif = AnnotationsReaderFactory.getReader(bcReader);
+			ClassInfoReader cif = AnnotationsReaderFactory.getReader();
 			ReadResult readResult = cif.read(new File[]{input});
 			Map<String,ClassInfo> classes = readResult.getClasses();
 			for (String className: classes.keySet()) {

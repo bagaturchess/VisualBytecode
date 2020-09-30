@@ -1,7 +1,6 @@
 package com.fmi.bytecode.annotations.gui.utils;
 
-import com.fmi.bytecode.annotations.input.ByteCodeReader;
-import com.fmi.bytecode.annotations.input.ByteCodeReaderFactory;
+
 import com.fmi.bytecode.annotations.tool.AnnotationsReaderFactory;
 import com.fmi.bytecode.annotations.tool.ClassInfoReader;
 import com.fmi.bytecode.annotations.tool.ReadResult;
@@ -24,6 +23,7 @@ import org.w3c.dom.Element;
 
 import com.fmi.bytecode.annotations.gui.utils.xml.XMLException;
 import com.fmi.bytecode.annotations.gui.utils.xml.XMLUtils;
+
 
 public class ModelUtils {
     public static final String TAG_PROJECT_ROOT = "AnnotationProject";
@@ -95,8 +95,7 @@ public class ModelUtils {
     }
     
     public static ReadResult processContent(ProjectModel projectModel) throws Exception {
-        ByteCodeReader bcReader = ByteCodeReaderFactory.createByteCodeReader();
-        ClassInfoReader cif = AnnotationsReaderFactory.getReader(bcReader);
+        ClassInfoReader cif = AnnotationsReaderFactory.getReader();
         List<File> contentList =  projectModel.getProjectContent();
         File[] content = new File[contentList.size()];
         for (int i = 0; i < contentList.size(); i++) {

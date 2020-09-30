@@ -41,7 +41,7 @@ public static enum InputType{WAR, JAR, CLASS, FOLDER};
  * @see com.fmi.bytecode.annotations.tool.ReadResult
  * @see com.fmi.bytecode.annotations.element.Annotation
  */
-public ReadResult read(File[] filesToTraverse) throws ReadingException;
+public ReadResult read(File[] filesToTraverse) throws Exception;
 
 }
 

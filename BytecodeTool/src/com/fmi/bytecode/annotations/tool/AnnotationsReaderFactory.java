@@ -1,6 +1,7 @@
 package com.fmi.bytecode.annotations.tool;
 
 import com.fmi.bytecode.annotations.input.ByteCodeReader;
+import com.fmi.bytecode.annotations.input.ByteCodeReaderFactory;
 import com.fmi.bytecode.annotations.tool.impl.ClassInfoReaderImpl;
 
 /**
@@ -14,7 +15,8 @@ public class AnnotationsReaderFactory {
 	 * Gets an initialized ClassInfoReader instance, ready for usage
 	 * @see com.fmi.bytecode.annotations.tool.AnnotationsReaderFactory#getReader()
 	 */
-	public static ClassInfoReader getReader(ByteCodeReader bcReader) {		
+	public static ClassInfoReader getReader() {
+		ByteCodeReader bcReader = ByteCodeReaderFactory.createByteCodeReader();
 		return new ClassInfoReaderImpl(bcReader);
 	}
 }
