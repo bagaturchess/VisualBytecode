@@ -10,7 +10,12 @@ So, it is difficult to:
 
 This project aims to resolve these difficulties by preventing people to search in archives and decompile java bytecode with java decompilers.
 The project provides visual environment (GUI) where one can import files, directories and archives.
-Than the program parse the bytecode of all classes and visualize the metadata in a tree on the screen.
+Than the program parses the bytecode of all classes and visualizes the metadata in a tree on the screen.
+
+Also, there is an advanced feature for exporting the classes' metadata as XML file and optinally to use XSL transformation to extract specific data.
+
+The part of the project, which parses the java bytecode is still closed source and hence is used as an obfuscated library (bytecode-parser.jar).
+The rest of the project is open source and you are welcome to contribute.
 
 The very initial versions of this project were handed over as a diploma work in the university.
 That is why I have decided to use MIT License for the project.
