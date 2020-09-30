@@ -5,8 +5,8 @@ import com.fmi.bytecode.annotations.element.EnumConstant;
 import com.fmi.bytecode.annotations.element.NamedMember;
 import com.fmi.bytecode.annotations.input.AnnotationModel;
 import com.fmi.bytecode.annotations.input.NamedMemberModel;
-import com.fmi.bytecode.annotations.input.EnumTypeModel;
 import com.fmi.bytecode.annotations.util.ComparisonUtils;
+import com.fmi.bytecode.annotations.input.EnumTypeModel;
 
 /**
  * Bytecode library <code>AnnotationPairValue</code> class wrapper that implements 

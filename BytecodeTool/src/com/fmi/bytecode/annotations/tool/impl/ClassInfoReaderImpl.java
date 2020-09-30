@@ -18,9 +18,9 @@ import com.fmi.bytecode.annotations.file.impl.JavaClassFileImpl;
 import com.fmi.bytecode.annotations.file.impl.WARFileImpl;
 import com.fmi.bytecode.annotations.input.ByteCodeReader;
 import com.fmi.bytecode.annotations.input.ClassModel;
+import com.fmi.bytecode.annotations.input.ReadingException;
 import com.fmi.bytecode.annotations.tool.ClassInfoReader;
 import com.fmi.bytecode.annotations.tool.ReadResult;
-import com.fmi.bytecode.annotations.tool.ReadingException;
 
 /**
  * @author Krasimir Topchiyski

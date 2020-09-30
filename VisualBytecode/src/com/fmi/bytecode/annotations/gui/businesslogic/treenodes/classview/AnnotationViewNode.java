@@ -5,7 +5,6 @@ import com.fmi.bytecode.annotations.element.AnnotationRecord;
 import com.fmi.bytecode.annotations.element.NamedMember;
 import com.fmi.bytecode.annotations.element.impl.AnnotationNamedMember;
 
-import com.fmi.bytecode.annotations.input.NamedMemberModel;
 
 import java.util.Map;
 
@@ -44,10 +43,10 @@ public class AnnotationViewNode extends MutableNode {
         
         int memberType = member.getMemberTag();        
         switch (memberType) {
-            case NamedMemberModel.TAG_ANNOTATION:
+            case '@': //Annotation
                 new AnnotationViewNode(parent, (AnnotationRecord) memberValue);
                 return;
-            case NamedMemberModel.TAG_ARRAY:
+            case '[': //Array
                 StaticTextNode membersArrayNode = new StaticTextNode(parent,
                                         memberName + "=array");
                 NamedMember[] members = member.getMemberArrayValue();
@@ -56,9 +55,9 @@ public class AnnotationViewNode extends MutableNode {
                     processSingleMember(membersArrayNode, currentMember);
                 }
                 return;
-            /*case NamedMemberModel.TAG_REF:
+            /*case TAG_REF:
                 break;*/
-            case NamedMemberModel.TAG_ENUM:
+            case 'e': //Enum
                  memberValue = 
                         member.getEnumConstantValue().getEnumerationLiteral();
                  break;

@@ -10,8 +10,6 @@ import com.fmi.bytecode.annotations.element.MethodInfo;
 
 import com.fmi.bytecode.annotations.element.NamedMember;
 
-import com.fmi.bytecode.annotations.input.NamedMemberModel;
-
 import sun.awt.shell.ShellFolder;
 
 import java.io.File;
@@ -274,13 +272,13 @@ public class ExportUtils {
          
          int memberType = member.getMemberTag();        
          switch (memberType) {
-             case NamedMemberModel.TAG_ANNOTATION:
+         	case '@': //Annotation
                  //currentElement.setAttribute(exportConfig.getATTR_NAME(), memberName); //name = name
                  //currentElement.setAttribute(exportConfig.getATTR_VALUE(), exportConfig.getTAG_ANNOTATION()); //value = array
                  appendAnnotationMembers(currentElement, (AnnotationRecord) memberValue, exportConfig);
                  memberValue = exportConfig.getTAG_ANNOTATION();
                  break;
-             case NamedMemberModel.TAG_ARRAY:
+         	case '[': //Array
                  //TODO: da vidim
                  //currentElement.setAttribute(exportConfig.getATTR_NAME(), memberName); //name = name
                  //currentElement.setAttribute(exportConfig.getATTR_VALUE(), exportConfig.getATTR_ARRAY()); //value = array
@@ -295,7 +293,7 @@ public class ExportUtils {
                  }
                  memberValue =  exportConfig.getATTR_ARRAY();
                  break;
-             case NamedMemberModel.TAG_ENUM:
+         	case 'e': //Enum
                   memberValue = 
                          member.getEnumConstantValue().getEnumerationLiteral();
                   break;

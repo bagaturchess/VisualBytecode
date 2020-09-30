@@ -2,6 +2,8 @@ package com.fmi.bytecode.annotations.tool;
 
 import java.io.File;
 
+import com.fmi.bytecode.annotations.input.ReadingException;
+
 
 /**
  * The <code>ClassInfoReader</code> has to provide the base functionality for extracting

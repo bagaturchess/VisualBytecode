@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/BytecodeTool"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/BytecodeParser"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

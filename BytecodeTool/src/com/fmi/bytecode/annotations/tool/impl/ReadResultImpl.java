@@ -3,7 +3,7 @@ package com.fmi.bytecode.annotations.tool.impl;
 
 import com.fmi.bytecode.annotations.tool.indexing.AnnotationFilter;
 import java.io.File;
-import com.fmi.bytecode.annotations.tool.ReadingException;
+
 import com.fmi.bytecode.annotations.tool.indexing.ClassFileAnnotationsIndexImpl;
 import com.fmi.bytecode.annotations.element.impl.ClassInfoImpl;
 import java.util.Collections;
@@ -15,6 +15,8 @@ import com.fmi.bytecode.annotations.tool.indexing.AnnotationsIndex;
 import com.fmi.bytecode.annotations.element.ClassInfo;
 import java.util.Map;
 import com.fmi.bytecode.annotations.file.FileInfo;
+import com.fmi.bytecode.annotations.input.ReadingException;
+
 import java.util.List;
 import com.fmi.bytecode.annotations.tool.ReadResult;
 
