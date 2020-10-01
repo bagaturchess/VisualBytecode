@@ -12,6 +12,8 @@ This project aims to resolve these difficulties by preventing people to search i
 The project provides visual environment (GUI) where one can import files, directories and archives.
 Than the program parses the bytecode of all classes and visualizes the metadata in a tree on the screen.
 
+![GitHub Logo](/Logo.png)
+
 Also, there is an advanced feature for exporting the classes' metadata as XML file and optionally to use XSL transformation to extract specific data.
 
 The part of the project, which parses the java bytecode is still closed source and hence is used as an obfuscated library (bytecode-parser.jar).
