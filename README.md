@@ -1,7 +1,7 @@
 
 # Overview
 
-In the modern java applications, frameworks, libraries and tools there are a lot of archive files (*.jar, *.zip, *.war, etc.) with java classes.
+In the modern java applications, frameworks, libraries and tools there are a lot of archive files (*.jar, *.zip, etc.) with java classes.
 So, it is difficult to:
   -  check if given class file is presented in the archives and where it is presented
   -  check if given class has given constructor, method or field
@@ -12,7 +12,7 @@ This project aims to resolve these difficulties by preventing people to search i
 The project provides visual environment (GUI) where one can import files, directories and archives.
 Than the program parses the bytecode of all classes and visualizes the metadata in a tree on the screen.
 
-Also, there is an advanced feature for exporting the classes' metadata as XML file and optinally to use XSL transformation to extract specific data.
+Also, there is an advanced feature for exporting the classes' metadata as XML file and optionally to use XSL transformation to extract specific data.
 
 The part of the project, which parses the java bytecode is still closed source and hence is used as an obfuscated library (bytecode-parser.jar).
 The rest of the project is open source and you are welcome to contribute.
